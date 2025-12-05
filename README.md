@@ -112,9 +112,9 @@ docker --version
 
 ## Time Spent
 
-SQL Assessment: 2-3 jam
-ETL Assessment: 13-14 jam
-Data Visualization: 3 jam
+- SQL Assessment: 2-3 jam
+- ETL Assessment: 13-14 jam
+- Data Visualization: 3 jam
 
 ## AI Utilization
 
@@ -134,3 +134,7 @@ Data Visualization: 3 jam
         - "How to resorting dataframe column and take out some columns."
         - "Suggest me how to manage 2 dataframe with different schema and dont have reference key between them. some column on one dataframe must be referenced to some column on second dataframe."
         - "Suggest me to create proper logging format."
+
+## Video Presentation
+
+[![](https://img.youtube.com/vi/JnlCHHky2NQ/0.jpg)](https://www.youtube.com/watch?v=JnlCHHky2NQ)
