@@ -1,0 +1,19 @@
+{
+    "source_type": "json",
+    "source_name": "transactions",
+    "table_name": "transactions",
+    "module_name": "retail360",
+    "job_name": "ingestion",
+    "tier": "bronze",
+    "source_file_path": "/opt/airflow/dags/generator/generator_output/transactions.json",
+    "source_schema": {},
+    "destination_bucket": "lake",
+    "destination_prefix": "bronze/transactions",
+    "destination_format": "json",
+    "destination_content_type": "application/json",
+    "minio_host": "minio:9000",
+    "minio_credentials": {
+        "access_key": "admin_minio",
+        "secret_key": "admin_minio"
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "source_type": "csv",
+    "source_name": "customers",
+    "table_name": "customers",
+    "module_name": "retail360",
+    "job_name": "ingestion",
+    "tier": "bronze",
+    "source_file_path": "/opt/airflow/dags/generator/generator_output/customers.csv",
+    "source_schema": {
+        "transaction_id": "string",
+        "user_id": "string",
+        "product_id": "string",
+        "amount": "float",
+        "timestamp": "string",
+        "payment_method": "string"
+    },
+    "destination_bucket": "lake",
+    "destination_prefix": "bronze/customers",
+    "destination_format": "csv",
+    "destination_content_type": "text/csv",
+    "minio_host": "minio:9000",
+    "minio_credentials": {
+        "access_key": "admin_minio",
+        "secret_key": "admin_minio"
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "destination_table_name": "enriched_sales",
+    "source_type": "minio",
+    "tier": "silver",
+    "job_name": "transformation",
+    "module_name": "retail360",
+    "sql_script_path": "/opt/airflow/dags/sql/retail360/silver/enriched_sales.sql",
+    "spark_job_script_path": "/opt/airflow/dags/utils/spark_plugins/retail360/silver/enriched_sales.py",
+    "source_table": [
+        {
+            "source_type": "json",
+            "source_name": "transactions",
+            "source_bucket": "lake",
+            "source_prefix": "bronze/transactions"
+        },
+        {
+            "source_type": "csv",
+            "source_name": "customers",
+            "source_bucket": "lake",
+            "source_prefix": "bronze/customers",
+            "separator": ","
+
+        }
+    ],
+    "destination_bucket": "lake",
+    "destination_prefix": "silver/enriched_sales",
+    "minio_host": "minio:9000",
+    "minio_credentials": {
+        "access_key": "admin_minio",
+        "secret_key": "admin_minio"
+    },
+    "jars": "/opt/airflow/jars/aws-java-sdk-bundle-1.12.782.jar,/opt/airflow/jars/hadoop-aws-3.3.6.jar,/opt/airflow/jars/minio-8.5.7-all.jar,/opt/airflow/jars/postgresql-42.7.8.jar"
+}
