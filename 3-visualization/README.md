@@ -13,7 +13,7 @@ Bagian ini merupakan analisis dan visualisasi data koperasi Indonesia menggunaka
     3-visualization/
     │
     ├── screenshots/
-    │ ├── Dashboard Koperasi Indonesia.png
+    │ └── Dashboard Koperasi Indonesia.png
     │
     └── README.md
 

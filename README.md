@@ -33,41 +33,104 @@ Dokumen ini mencakup solusi untuk:
     │
     ├── 1-sql-assessment/
     │   ├── README.md                      # SQL documentation
-    │   ├── schema.sql                     # Database schema
-    │   ├── mock_data.sql                  # Generated mock data
     │   ├── queries/
-    │   │   ├── basic_query_1.sql         # Inventory turnover
-    │   │   ├── basic_query_2.sql         # Staff performance
-    │   │   └── intermediate_query_1.sql   # Purchase patterns (optional)
-    │   └── screenshots/
-    │       └── query_results.png
+    │   │   ├── 001-ddl_query.sql         # Database schema
+    │   │   ├── 002-mock-data.sql         # Generated mock data
+    │   │   ├── inventory-turnover.sql         # Inventory turnover
+    │   │   └── staff-performance-and-sales.sql   # Staff performance
+    │   ├── results/
+    │   │   ├── inventory-turnover.csv        # Inventory turnover result
+    │   │   ├── inventory-turnover.png        # Inventory turnover screenshot
+    │   │   ├── staff-performance-and-sales.csv  # Staff performance result
+    │   │   └── staff-performance-and-sales.png  # Staff performance screenshot
     │
     ├── 2-etl-assessment/
     │   ├── README.md                      # ETL documentation
     │   ├── data/
     │   │   ├── City Indonesia.xlsx        # Master data
     │   │   ├── Assessment Data Asset Dummy.xlsx  # Raw data
-    │   │   └── output/
-    │   │       ├── cleaned_data.xlsx      # Final output
-    │   │       └── error_log.csv          # Invalid records
-    │   ├── etl_pipeline.py                # Main ETL script
-    │   ├── requirements.txt               # Python dependencies
-    │   └── notebooks/
-    │       └── etl_exploration.ipynb      # Development notebook (optional)
+    │   │   └── output_data_asset_transformed.xlsx  # Output data
+    │   ├── logs/
+    │   │   ├── etl_processing.log         # ETL log
+    │   │   └── invalid_city_records_log.csv  # Invalid City records log
+    │   ├── src/
+    │       └── etl.py                     # ETL script
     │
-    ├── 3-data-visualization/
-    │   ├── README.md                      # Visualization documentation
-    │   ├── data/
-    │   │   └── koperasi_indonesia.csv     # Dataset (if downloaded)
-    │   ├── dashboard_link.txt             # Looker Studio URL
-    │   └── screenshots/
-    │       ├── dashboard_overview.png
-    │       ├── map_visualization.png
-    │       └── key_metrics.png
-    │
-    └── 4-big-data-pipeline/              # (Optional)
-        ├── README.md
-        ├── docker-compose.yml
-        ├── src/
-        ├── generator/
-        └── ...
+    └── 3-data-visualization/
+        ├── README.md                      # Visualization documentation
+        └── screenshots/
+            └── Dashboard Koperasi Indonesia.png  # Dashboard screenshot
+
+
+## Setup Instructions
+
+#### Prerequisites
+
+```bash
+# Python 3.10 or higher
+python --version
+
+# Pip package manager
+pip --version
+
+# Docker
+docker --version
+```
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/florienzh4x/data-engineer-assessment.git
+   cd data-engineer-assessment
+   ```
+
+2. SQL Assessment Setup
+   ```bash
+   cd 1-sql-assessment
+
+   # Running PostgreSQL
+   docker compose up -d
+
+   # Jalankan query di DBeaver
+   ```
+
+3. ETL Assessment Setup
+   ```bash
+   cd 2-etl-assessment
+
+   # Install Dependencies
+   pip install pandas duckdb openpyxl
+
+   # Run ETL Pipeline
+   python src/etl.py
+   ```
+
+4. Data Visualization
+   ```bash
+   cd 3-data-visualization
+   # Buka link yang di tampilkan di README.md
+   ```
+
+## Time Spent
+
+SQL Assessment: 2-3 jam
+ETL Assessment: 13-14 jam
+Data Visualization: 3 jam
+
+## AI Utilization
+
+1. Mock Data Generator:
+    - Build: 
+        - Utilize AI to create SQL Query for mock data generation.
+    - Deliverable: 
+        - "Give me a SQL Query that generates mock data like 50 rows for each table. Try make it based on this schema tables: (_Given DDL Schema Query_)"
+
+2. Code Optimization
+    - Enhancement:
+        - Resorting dataframe column and take out some columns
+        - Combine 2 dataframe with different schema
+        - Handle proper logging format
+
+    - Deliverable:
+        - "How to resorting dataframe column and take out some columns."
+        - "Suggest me how to manage 2 dataframe with different schema and dont have reference key between them. some column on one dataframe must be referenced to some column on second dataframe."
+        - "Suggest me to create proper logging format."

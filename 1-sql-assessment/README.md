@@ -14,15 +14,16 @@ Tujuan utama assessment ini adalah membuat query untuk menghitung inventory turn
 ## Struktur Repository
     1-sql-assessment/
     │
-    ├── results/
-    │ ├── inventory-turnover.png
-    │ └── staff-performance-and-sales.png
-    │
     ├── queries/
     │ ├── 001-ddl_query.sql
     │ ├── 002-mock-data.sql
     │ ├── inventory-turnover.sql
     │ └── staff-performance-and-sales.sql
+    ├── results/
+    │ ├── inventory-turnover.csv
+    │ ├── inventory-turnover.png
+    │ ├── staff-performance-and-sales.csv
+    │ └── staff-performance-and-sales.png
     │
     └── README.md
 

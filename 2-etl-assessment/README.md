@@ -50,11 +50,9 @@ ETL pipeline ini dibuat dengan tujuan utamanya adalah:
     │ ├── Assessment Data Asset Dummy.xlsx
     │ ├── output_data_asset_transformed.xlsx
     │ └── City Indonesia.xlsx
-    │
     ├── logs/
     │ ├── etl_processing.log
     │ └── invalid_city_records_log.csv
-    │
     ├── src/
     │ └── etl.py
     │
